@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv'
 import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 
-dotenv.config()
+dotenv.config();
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -17,7 +17,7 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
   res.status(200).send({
-    message: 'Hello from CodeX!'
+    message: 'Proton AI server is live!'
   })
 })
 
@@ -30,7 +30,7 @@ app.post('/', async (req, res) => {
       prompt: `${prompt}`,
       temperature: 0,
       max_tokens: 4000,
-      top_p: 1, 
+      top_p: 1,
       frequency_penalty: 0.5,
       presence_penalty: 0,
     });
